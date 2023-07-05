@@ -20,6 +20,10 @@ export class MovieCardComponent {
     this.getMovies();
   }
 
+  /**
+   * Gets the movies from api.
+   * @return returns a list of movie object
+   */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((response: any) => {
       this.movies = response;
