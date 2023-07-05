@@ -9,6 +9,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatListModule } from '@angular/material/list';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon'
 
@@ -18,14 +19,19 @@ import { UserRegistrationFormComponent } from './user-registration-form/user-reg
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
+import { MovieCardComponent } from './movie-card/movie-card.component';
+import { MovieInfoComponent } from './movie-info/movie-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserRegistrationFormComponent,
     WelcomePageComponent,
-    UserLoginFormComponent
+    UserLoginFormComponent,
+    MovieCardComponent,
+    MovieInfoComponent
   ],
+
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -34,6 +40,7 @@ import { UserLoginFormComponent } from './user-login-form/user-login-form.compon
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
+    MatListModule,
     MatIconModule,
     MatInputModule,
     MatSnackBarModule,

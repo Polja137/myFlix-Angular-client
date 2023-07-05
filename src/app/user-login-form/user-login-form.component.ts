@@ -1,11 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-
 import { Router } from '@angular/router';
-
 import { FetchApiDataService } from '../fetch-api-data.service';
-
 import { MatDialogRef } from '@angular/material/dialog';
-
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { R3PartialDeclaration } from '@angular/compiler';
 
@@ -29,12 +25,16 @@ export class UserLoginFormComponent implements OnInit {
 
   ngOnInit(): void { }
 
+   /**
+   * Sends the form inputs to the backend.
+   */
   loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe((data) => {
       
-      localStorage.setItem("user", JSON.stringify(data.user.Username))
+      //logic for successful user registration
+      localStorage.setItem("user", JSON.stringify(data.user))
       localStorage.setItem("token", data.token);
-
+      this.router.navigate(['movies']);
       this.dialogRef.close();
       this.snackBar.open('you\'ve been logged in', 'OK', {
         duration: 2000
